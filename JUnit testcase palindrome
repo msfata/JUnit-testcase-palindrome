@@ -1,0 +1,28 @@
+package com.first;
+/*
+ * msfata programminghelp
+ */
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class Palindrome {
+
+	private static boolean ispalindrome(String input) {
+		// removing white spaces
+		String removeBlank = input.replaceAll("\\s+", "");
+		// reversing string
+		String reverseString = new StringBuilder(removeBlank).reverse().toString();
+		// checking
+		if (removeBlank.equalsIgnoreCase(reverseString))
+
+			return true;
+
+		return false;
+	}
+
+	@Test
+	public void test() {
+		assertTrue(ispalindrome("A man a plan a canal panama"));
+	}
+}
